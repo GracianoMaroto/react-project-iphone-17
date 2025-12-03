@@ -16,9 +16,24 @@ function Intro() {
           O design mais refinado que já criamos. Alumínio de grau cirúrgico.
           Chip A18 Pro. Sistema de câmeras Pro revolucionário
         </p>
-        <div>
-          <button>Compre agora</button>
-          <button>Saiba mais</button>
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-16">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/50 cursor-pointer">
+            Compre agora
+          </button>
+          <button className="border-2 border-white rounded-full hover:bg-white hover:text-black text-white px-8 py-4 text-lg font-medium transition-all duration-300 hover:scale-105 cursor-pointer">
+            Saiba mais
+          </button>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mx-auto max-w-5xl">
+          {specs.map((spec, index) => (
+            <div
+              key={index}
+              className="bg-gray-900 rounded-2xl p-6 hover:bg-gray-800 transition-all duration-300 hover:scale-105 cursor-pointer"
+            >
+              <p className={`text-3xl font-bold ${spec.color}`}>{spec.value}</p>
+              <p>{spec.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
